@@ -7,6 +7,12 @@
 		"generator",
 		"template"
 	],
+	"scripts": {
+		"lint": "eslint --config .eslintrc .",
+		"get-version": "echo $npm_package_version",
+		"release": "semantic-release",
+		"lint-fix": "eslint --fix --config .eslintrc ."
+	},
 	"author": "Jonas Lagoni (jonas-lt@live.dk)",
 	"license": "Apache-2.0",
 	"dependencies": {
@@ -15,7 +21,6 @@
 	"devDependencies": {
 		"eslint": "^6.8.0",
 		"eslint-plugin-sonarjs": "^0.5.0",
-		"jsdoc-to-markdown": "^5.0.3",
 		"@semantic-release/commit-analyzer": "^8.0.1",
 		"@semantic-release/github": "^7.0.4",
 		"@semantic-release/npm": "^7.0.3",
