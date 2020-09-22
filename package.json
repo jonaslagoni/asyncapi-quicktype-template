@@ -1,0 +1,81 @@
+{
+	"name": "@lagoni/asyncapi-quicktype-template",
+	"version": "0.1.0",
+	"description": "Template to generate type files with quicktype.",
+	"keywords": [
+		"asyncapi",
+		"generator",
+		"template"
+	],
+	"scripts": {
+		"lint": "eslint --config .eslintrc .",
+		"get-version": "echo $npm_package_version",
+		"release": "semantic-release",
+		"lint-fix": "eslint --fix --config .eslintrc ."
+	},
+	"author": "Jonas Lagoni (jonas-lt@live.dk)",
+	"license": "Apache-2.0",
+	"dependencies": {
+		"@lagoni/asyncapi-quicktype-filter": "^1.2.2"
+	},
+	"devDependencies": {
+		"eslint": "^6.8.0",
+		"eslint-plugin-sonarjs": "^0.5.0",
+		"@semantic-release/commit-analyzer": "^8.0.1",
+		"@semantic-release/github": "^7.0.4",
+		"@semantic-release/npm": "^7.0.3",
+		"@semantic-release/release-notes-generator": "^9.0.1",
+		"conventional-changelog-conventionalcommits": "^4.2.3",
+		"semantic-release": "^17.0.4"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/jonaslagoni/asyncapi-quicktype-template.git"
+	},
+	"bugs": {
+		"url": "https://github.com/jonaslagoni/asyncapi-quicktype-template/issues"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"homepage": "https://github.com/jonaslagoni/asyncapi-quicktype-template#readme",
+	"generator": {
+		"parameters": {
+			"quicktypeLanguage": {
+				"description": "Which type of language should be generated",
+				"required": true
+			},
+			"renderOptions": {
+				"description": "Provide a JSON object as a string which should be parsed to quicktype.",
+				"default": "{}",
+				"required": false
+			},
+			"subTargetDir": {
+				"description": "which relative target sub directory should it be rendered to. It is relative to where the generators targetDir.",
+				"required": false
+			}
+		},
+		"generator": ">=0.50.0 <=2.0.0"
+	},
+	"release": {
+		"branches": [
+			"master"
+		],
+		"plugins": [
+			[
+				"@semantic-release/commit-analyzer",
+				{
+					"preset": "conventionalcommits"
+				}
+			],
+			[
+				"@semantic-release/release-notes-generator",
+				{
+					"preset": "conventionalcommits"
+				}
+			],
+			"@semantic-release/npm",
+			"@semantic-release/github"
+		]
+	}
+}
