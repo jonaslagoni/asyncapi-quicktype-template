@@ -1,0 +1,33 @@
+{
+	"name": "@lagoni/asyncapi-quicktype-template",
+	"version": "0.1.0",
+	"description": "Template to generate files with quicktype.",
+	"keywords": [
+		"asyncapi",
+		"generator",
+		"template"
+	],
+	"author": "Jonas Lagoni (jonas-lt@live.dk)",
+	"license": "Apache-2.0",
+	"dependencies": {
+		"@lagoni/asyncapi-quicktype-filter": "^1.2.2"
+	},
+	"generator": {
+		"parameters": {
+			"quicktypeLanguage": {
+				"description": "Which type of language should be generated",
+				"required": true
+			},
+			"renderOptions": {
+				"description": "Provide a JSON object as a string which should be parsed to quicktype.",
+				"default": "{}",
+				"required": false
+			},
+			"subTargetDir": {
+				"description": "which relative target sub directory should it be rendered to. It is relative to where the generators targetDir.",
+				"required": false
+			}
+		},
+		"generator": ">=0.50.0 <=2.0.0"
+	}
+}
