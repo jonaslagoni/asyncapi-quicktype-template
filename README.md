@@ -1,3 +1,5 @@
+# ARCHIVED: I am working on a much better alternative to this called [Modelina](https://github.com/asyncapi/modelina), and therefore have no reason to keep this library maintained. Happy to help out with any inqueries for type generation over there: https://github.com/asyncapi/modelina
+
 # Template to generate type files for the AsyncAPI Generator
 
 This template generates types based on the desired language specified with the `quicktypeLanguage` parameter. This template generates all the defined message payloads. To fully use this template it is expected to be generated into a project already setup.
